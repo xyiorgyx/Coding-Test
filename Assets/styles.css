@@ -1,0 +1,42 @@
+*{
+    text-align: center;
+}
+
+#question {
+    width: 75%;
+    height: 25%;
+    background-color: aqua;
+    font-size: larger;
+    margin: auto 10% auto 10%;
+}
+
+#choices {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    margin-left: 10%;
+    height: 30%;
+    width: 30%;
+    background-color: blue;
+}
+
+button:hover{
+    background-color: red;
+}
+
+#start{
+    font-size: larger;
+    font-weight: bold;
+    margin: 2% 40% 2% 40%;
+    width: 10%;
+    height: 6%;
+    background-color: green;
+}
+
+#start:hover{
+    bord;
+}

@@ -46,11 +46,11 @@ var testQuestions = [
         answer: 'b'
     },
     {
-        question: "What is the primary use for CSS code?",
+        question: 'Which of the following choices is the proper structure for an if statement',
         choices: {
-            a: 'Styling',
-            b: 'Structuring',
-            c: 'Bug fixing'
+            a: 'if ("Conditional statment") {"Expected excecution of code"};',
+            b: 'if ("Executed code") {"Conditional statement"};',
+            c: 'If {"Conditional statment"} ("executed code");'
         },
         answer: 'a'
     },
@@ -91,3 +91,7 @@ var testQuestions = [
         answer: 'a'
     },    
 ];
+
+function presentQuestion(){
+    
+}

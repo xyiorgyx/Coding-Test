@@ -5,8 +5,8 @@
 #question {
     width: 75%;
     height: 25%;
-    background-color: aqua;
     font-size: larger;
+    color: black;
     margin: auto 10% auto 10%;
 }
 
@@ -38,5 +38,6 @@ button:hover{
 }
 
 #start:hover{
-    bord;
+    border-width: 2px;
+    border-color: black;
 }

@@ -1,4 +1,3 @@
-
 var testQuestions = [
     {
         question: "What is the primary use for CSS code?",
@@ -6,6 +5,7 @@ var testQuestions = [
             a: 'Styling',
             b: 'Structuring',
             c: 'Bug fixing',
+            d: 'Debugging'
         },
         answer: 'a'
     }, 
@@ -15,11 +15,12 @@ var testQuestions = [
             a: 'Cross Axis',
             b: 'Main Axis',
             c: 'All Axis'
+
         },
         answer: 'b'
     },
     {
-        question: 'What CSS attribute allows a programmer to input data using a URL?',
+        question: 'What HTML attribute allows a programmer to input data using a URL?',
         choices: {
             a: 'src = ""',
             b: '<a>',
@@ -55,11 +56,12 @@ var testQuestions = [
         answer: 'a'
     },
     {
-        question: "What is the primary use for CSS code?",
+        question: "Using Javascript how can we create a functioning button?",
         choices: {
-            a: 'Styling',
-            b: 'Structuring',
-            c: 'Bug fixing'
+            a: 'Addbuttonlistener("click", function)',
+            b: 'Addclicklistener("click", function)',
+            c: 'Addeventlistener("click", function)',
+            d: 'Addpushlistener("click",function)',
         },
         answer: 'a'
     },
@@ -91,7 +93,3 @@ var testQuestions = [
         answer: 'a'
     },    
 ];
-
-function presentQuestion(){
-    
-}

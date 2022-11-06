@@ -1,93 +1,36 @@
+import testQuestions from "questions.js";
 
-var testQuestions = [
-    {
-        question: "What is the primary use for CSS code?",
-        choices: {
-            a: 'Styling',
-            b: 'Structuring',
-            c: 'Bug fixing'
-        },
-        answer: 'a'
-    }, 
-    {
-        question: 'In CSS, "justify content" minipulates the spacing of content on what axis?',
-        choices: {
-            a: 'Cross Axis',
-            b: 'Main Axis',
-            c: 'All Axis'
-        },
-        answer: 'b'
-    },
-    {
-        question: 'What CSS attribute allows a programmer to input data using a URL?',
-        choices: {
-            a: 'src = ""',
-            b: '<a>',
-            c: 'href = ""'
-        },
-        answer: 'c'
-    },
-    {
-        question: 'Which one of these choices is ',
-        choices: {
-            a: 'Styling',
-            b: 'Structuring',
-            c: 'Bug fixing'
-        },
-        answer: 'a'
-    },
-    {
-        question: "What is the primary use for CSS code?",
-        choices: {
-            a: 'Styling',
-            b: 'Structuring',
-            c: 'Bug fixing'
-        },
-        answer: 'a'
-    },
-    {
-        question: "What is the primary use for CSS code?",
-        choices: {
-            a: 'Styling',
-            b: 'Structuring',
-            c: 'Bug fixing'
-        },
-        answer: 'a'
-    },
-    {
-        question: "What is the primary use for CSS code?",
-        choices: {
-            a: 'Styling',
-            b: 'Structuring',
-            c: 'Bug fixing'
-        },
-        answer: 'a'
-    },
-    {
-        question: "What is the primary use for CSS code?",
-        choices: {
-            a: 'Styling',
-            b: 'Structuring',
-            c: 'Bug fixing'
-        },
-        answer: 'a'
-    },
-    {
-        question: "What is the primary use for CSS code?",
-        choices: {
-            a: 'Styling',
-            b: 'Structuring',
-            c: 'Bug fixing'
-        },
-        answer: 'a'
-    },
-    {
-        question: "What is the primary use for CSS code?",
-        choices: {
-            a: 'Styling',
-            b: 'Structuring',
-            c: 'Bug fixing'
-        },
-        answer: 'a'
-    },    
-];
+
+currentQuestion = document.querySelector('#question')
+choice1 = document.selectelementbyid('a');
+choice2 = document.selectelementbyid('b');
+choice3 = document.selectelementbyid('c');
+choice4 = document.selectelementbyid('d');
+
+function displayQuestion() {
+
+    var currentQuestion = [];
+    var choice1 = [];
+    var choice2 = [];
+    var choice3 = [];
+    var choice4 = [];
+    var answer = [] 
+    
+    currentQuestion.innerHTML = testQuestions[0].question;
+    choice1.push(testQuestions[0].choices[a]);
+    choice2.push(testQuestions[0].choices[b]);
+    choice3.push(testQuestions[0].choices[c]);
+    choice4.push(testQuestions[0].choices[d]);
+}
+
+choice1.addEventListener('click', checkAnswer);
+choice2.addEventListener('click', checkAnswer);
+choice3.addEventListener('click', checkAnswer);
+choice4.addEventListener('click', checkAnswer);
+nextbtn.addEventListener('click', next)
+
+var correctMess = 'Thats correct';
+var quest = 0;
+
+
+

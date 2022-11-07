@@ -3,21 +3,26 @@
 }
 
 #question {
-    width: 75%;
-    height: 25%;
+    width: 80%;
+    height: 100px;
     font-size: larger;
     color: black;
+    background-color: aqua;
     margin: auto 10% auto 10%;
+    text-align: center;
 }
 
 #choices {
-    height: 50%;
-    width: 100%;
+    height: 300px;
+    width: 900px;
     display: flex;
     flex-direction: column;
+    margin-left: 50px;
+    margin-top: 5px;
 }
 
 button {
+    font-size: large;
     margin-left: 10%;
     height: 30%;
     width: 30%;
@@ -27,7 +32,14 @@ button {
 button:hover{
     background-color: red;
 }
-
+#timer {
+    height: 100px;
+    width: 300px;
+    background-color: black;
+    position: relative;
+    bottom: 200px;
+    color: beige;
+}
 #start{
     font-size: larger;
     font-weight: bold;

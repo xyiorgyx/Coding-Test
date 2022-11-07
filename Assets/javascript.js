@@ -1,36 +1,104 @@
-import testQuestions from "questions.js";
+
+var testQuestions = [
+    {
+        question: "What is the primary use for CSS code?",
+        choices: {
+            a: 'Styling',
+            b: 'Structuring',
+            c: 'Bug fixing',
+            d: 'Debugging'
+        },
+        answer: 'a'
+    },
+    {
+        question: 'In CSS, "justify content" minipulates the spacing of content on what axis?',
+        choices: {
+            a: 'Cross Axis',
+            b: 'Main Axis',
+            c: 'All Axis'
+
+        },
+        answer: 'b'
+    },
+];
 
 
-currentQuestion = document.querySelector('#question')
-choice1 = document.selectelementbyid('a');
-choice2 = document.selectelementbyid('b');
-choice3 = document.selectelementbyid('c');
-choice4 = document.selectelementbyid('d');
+var numCorrect = 0;
+var userAnswer = '';
+var secondsLeft = 100;
+var questionNum = 0;
+var answer = testQuestions[questionNum].answer
+var currentQuestion = document.getElementById("question");
+var choice1 = document.getElementById('a');
+var choice2 = document.getElementById('b');
+var choice3 = document.getElementById('c');
+var choice4 = document.getElementById('d');
+var timer = document.getElementById('timer');
+function displaymessage(){
 
-function displayQuestion() {
-
-    var currentQuestion = [];
-    var choice1 = [];
-    var choice2 = [];
-    var choice3 = [];
-    var choice4 = [];
-    var answer = [] 
-    
-    currentQuestion.innerHTML = testQuestions[0].question;
-    choice1.push(testQuestions[0].choices[a]);
-    choice2.push(testQuestions[0].choices[b]);
-    choice3.push(testQuestions[0].choices[c]);
-    choice4.push(testQuestions[0].choices[d]);
 }
 
+function clock() {
+    var timerInterval = setInterval(function () {
+        secondsLeft--;
+        timer.textContent = secondsLeft + " seconds left to complete the test.";
+
+        if (secondsLeft === 0) {
+            clearInterval(timerInterval);
+            displaymessage();
+        }
+
+    }, 1000);
+}
+
+clock()
+function displayQuestion() {
+    currentQuestion.innerHTML = testQuestions[questionNum].question;
+    choice1.innerHTML = testQuestions[questionNum].choices.a;
+    choice2.innerHTML = testQuestions[questionNum].choices.b;
+    choice3.innerHTML = testQuestions[questionNum].choices.c;
+    choice4.innerHTML = testQuestions[questionNum].choices.d;
+    console.log(testQuestions[questionNum].question)
+}
+
+function changeGreen() {
+    currentTarget.setAttribute(
+        "style",
+        "background-color: green"
+    );
+}
+
+function changeRed() {
+    currentTarget.setAttribute(
+        "style",
+        "background-color: red"
+    );
+}
+
+displayQuestion()
+function checkAnswer() {
+    for (var i=0, i < questions.length; i++ )
+    userAnswer = (choices[i].querysSelector('input))
+    if (testQuestions[questionNum].answer == userAnswer) {
+        changeGreen();
+
+    }
+    else if (testQuestions[questionNum].answer !== userAnswer) {
+        changeRed();
+
+    }
+}
+
+
+displayQuestion()
 choice1.addEventListener('click', checkAnswer);
 choice2.addEventListener('click', checkAnswer);
 choice3.addEventListener('click', checkAnswer);
 choice4.addEventListener('click', checkAnswer);
-nextbtn.addEventListener('click', next)
+// nextbtn.addEventListener('click', next)
 
 var correctMess = 'Thats correct';
-var quest = 0;
+var incorrectMess = 'sorry, thats not correct, the answer is: '
 
 
-
+console.log(secondsLeft)

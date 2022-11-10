@@ -11,7 +11,7 @@ var testQuestions = [
         answer: 'A: Styling'
     },
     {
-        question: 'In CSS, "justify content" minipulates the spacing of content on what axis?',
+        question: 'In CSS, "justify content" minipulates the spacing of content on what axis of flex?',
         choices: {
             a: 'A: Cross Axis',
             b: 'B: Main Axis',
@@ -22,7 +22,7 @@ var testQuestions = [
         answer: 'B: Main Axis'
     },
     {
-        question: 'What HTML attribute allows a programmer to input data using a URL?',
+        question: 'What HTML attribute allows a programmer to input something using a URL?',
         choices: {
             a: 'A: src = ""',
             b: 'B: <a>',
@@ -44,67 +44,66 @@ var testQuestions = [
     {
         question: 'What is the main purpose of Meta Tags?',
         choices: {
-            a: 'A: Used in conjunction with Zuckerburg\'s Metaverse?',
-            b: 'B: Stores information specifically about the webpage',
-            c: 'C: There is no such thing as a meta tage',
-            d: 'D: '
+            a: 'A: It is used in conjunction with Zuckerburg\'s Metaverse?',
+            b: 'B: Defines data specifically about the webpage',
+            c: 'C: There is no such thing as META tags',
+            d: 'D: META is strictally for testing purposes'
         },
-        answer: 'B: Stores information specifically about the webpage'
+        answer: 'B: Defines data specifically about the webpage'
     },
     {
         question: 'Which of the following choices is the proper structure for an if statement',
         choices: {
-            a: 'if ("Conditional statment") {"Expected excecution of code"};',
-            b: 'if ("Executed code") {"Conditional statement"};',
-            c: 'If {"Conditional statment"} ("executed code")',
-            d: 'if {"Executed code"} (Conditional Statement)'
+            a: 'A: if ("Conditional statment") {"Expected excecution of code"};',
+            b: 'B: if ("Executed code") {"Conditional statement"};',
+            c: 'C: If {"Conditional statment"} ("executed code")',
+            d: 'D: if {"Executed code"} (Conditional Statement)'
         },
-        answer: 'if ("Conditional statment") {"Expected excecution of code"};'
+        answer: 'A: if ("Conditional statment") {"Expected excecution of code"};'
     },
     {
         question: "Using Javascript how can we create a functioning button?",
         choices: {
-            a: 'Addbuttonlistener("click", function)',
-            b: 'Addclicklistener("click", function)',
-            c: 'Addeventlistener("click", function)',
-            d: 'Addpushlistener("click", function)',
+            a: 'A: Addbuttonlistener("click", function)',
+            b: 'B: Addclicklistener("click", function)',
+            c: 'C: Addeventlistener("click", function)',
+            d: 'D: Addpushlistener("click", function)',
         },
-        answer: 'Addeventlistener("click", function)'
+        answer: 'C: Addeventlistener("click", function)'
     },
     {
-        question: "What is the primary use for CSS code?",
+        question: "Which of these is the necessary decleration of an HTML file?",
         choices: {
-            a: 'Styling',
-            b: 'Structuring',
-            c: 'Bug fixing',
-            d: ''
+            a: 'A: Doctype HTML',
+            b: 'B: <Doctype web>',
+            c: 'C: <html>',
+            d: 'D: <!DOCTYPE html>'
         },
-        answer: 'a'
+        answer: 'D: <!DOCTYPE html>'
     },
     {
-        question: "What is the primary use for CSS code?",
+        question: 'What is the main purpose of CSS\' "Flex Box"?',
         choices: {
-            a: 'Styling',
-            b: 'Structuring',
-            c: 'Bug fixing',
-            d: ''
+            a: 'A: Interactions with Buttons',
+            b: 'B: Creative design',
+            c: 'C: Responsivness',
+            d: 'D: Creating elements'
         },
-        answer: 'a'
+        answer: 'C: Responsivness'
     },
     {
-        question: "What is the primary use for CSS code?",
+        question: "Which of the folloing tags is used to externally connect a CSS to an HTML file?",
         choices: {
-            a: 'Styling',
-            b: 'Structuring',
-            c: 'Bug fixing',
-            d: ''
+            a: 'A: <Connect = " ">',
+            b: 'B: Import= " "',
+            c: 'C: CSS=" "',
+            d: 'D: <link>'
         },
-        answer: 'a'
+        answer: 'D: <link>'
     },
 ];
-
-var totalQuestion = 10
-var correctAnswers = 0
+var questionNumDis = 1
+var correctAnswers = 0;
 var secondsLeft = 100;
 var questionNum = 0;
 var currentQuestion = document.getElementById("question");
@@ -114,8 +113,11 @@ var choice2 = document.getElementById('b');
 var choice3 = document.getElementById('c');
 var choice4 = document.getElementById('d');
 var timer = document.getElementById('timer');
-var startbtn = document.querySelector('#start')
-var messageBox = document.getElementById('messagebox')
+var startbtn = document.querySelector('#start');
+var messageBox = document.getElementById('messagebox');
+var choices = document.getElementById('choices');
+var questDisplay = document.getElementById('questNumDis');
+questDisplay.textContent = "Question: " + questionNumDis; 
 
 function displayCorrect() {
     messageBox.textContent = "Thats correct!"
@@ -146,7 +148,6 @@ function clock() {
     }, 1000);
 }
 
-clock();
 function displayQuestion() {
     answer = testQuestions[questionNum].answer;
     currentQuestion.textContent = testQuestions[questionNum].question;
@@ -163,7 +164,6 @@ function displayQuestion() {
     console.log('Question Num: ' + questionNum)
     console.log('Correct Answers: ' + correctAnswers)
 }
-displayQuestion()
 
 choice1.addEventListener('click', function () {
     if (choice1.textContent === answer) {
@@ -219,7 +219,21 @@ choice4.addEventListener('click', function () {
     displayQuestion();
     return;
 });
-
+startbtn.addEventListener('click', function(){
+    displayQuestion();
+    clock();
+    choices.setAttribute(
+        'style',
+        'visibility: visible')
+    startbtn.setAttribute(
+        'style',
+        'visibility: hidden'
+    )
+    questDisplay.setAttribute(
+        'style',
+        'visibility: visible',
+    )
+})
 
 
 var correctMess = 'Thats correct';

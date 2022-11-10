@@ -1,6 +1,6 @@
-*{
+* {
     text-align: center;
-    background-color: grey;
+    background-color: lightgrey;
 }
 
 #question {
@@ -19,6 +19,7 @@
     flex-direction: row;
     margin-left: 50px;
     margin-top: 5px;
+    visibility: hidden;
 }
 
 #choices button {
@@ -32,21 +33,23 @@
     left: 18%;
 }
 
-button:hover{
+button:hover {
     background-color: white;
 }
+
 #timer {
     height: 30%;
     width: 30%;
     position: absolute;
     left: 35%;
-    bottom: 20%;
+    bottom: 25%;
     color: black;
     font-weight: bolder;
     font-size: larger;
 
 }
-#start{
+
+#start {
     font-size: larger;
     font-weight: bold;
     margin: 2% 40% 2% 40%;
@@ -55,7 +58,7 @@ button:hover{
     background-color: darkgray;
 }
 
-#start:hover{
+#start:hover {
     border-width: 2px;
     border-color: black;
 }
@@ -68,4 +71,15 @@ button:hover{
     margin-top: 5%;
     font-size: xx-large;
 
+}
+
+#questNumDis {
+    position: absolute;
+    width: 8%;
+    height: 3%;
+    right: 46%;
+    top: 18%;
+    font-size: 30px;
+    font-weight: bolder;
+    visibility: hidden;
 }

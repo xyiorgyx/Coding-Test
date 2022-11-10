@@ -30,7 +30,7 @@ button {
 }
 
 button:hover{
-    background-color: red;
+    background-color: white;
 }
 #timer {
     height: 100px;

@@ -105,9 +105,9 @@ var testQuestions = [
 var questionNumDis = 1
 var correctAnswers = 0;
 var secondsLeft = 100;
-var questionNum = 0;
+var questionIndexNum = 0;
 var currentQuestion = document.getElementById("question");
-var answer = testQuestions[questionNum].answer;
+var answer = testQuestions[questionIndexNum].answer;
 var choice1 = document.getElementById('a');
 var choice2 = document.getElementById('b');
 var choice3 = document.getElementById('c');
@@ -117,7 +117,7 @@ var startbtn = document.querySelector('#start');
 var messageBox = document.getElementById('messagebox');
 var choices = document.getElementById('choices');
 var questDisplay = document.getElementById('questNumDis');
-questDisplay.textContent = "Question: " + questionNumDis; 
+
 
 function displayCorrect() {
     messageBox.textContent = "Thats correct!"
@@ -128,7 +128,7 @@ function displayCorrect() {
 }
 
 function displayWrong() {
-    messageBox.textContent = "Im sorry, thats incorrect. 5 seconds has been removed from your remaining time"
+    messageBox.textContent = "Im sorry, thats incorrect. 5 seconds has been deducted from the time"
     messageBox.setAttribute(
         "style",
         "color: red"
@@ -149,19 +149,20 @@ function clock() {
 }
 
 function displayQuestion() {
-    answer = testQuestions[questionNum].answer;
-    currentQuestion.textContent = testQuestions[questionNum].question;
-    choice1.textContent = testQuestions[questionNum].choices.a;
-    choice2.textContent = testQuestions[questionNum].choices.b;
-    choice3.textContent = testQuestions[questionNum].choices.c;
-    choice4.textContent = testQuestions[questionNum].choices.d;
+    answer = testQuestions[questionIndexNum].answer;
+    currentQuestion.textContent = testQuestions[questionIndexNum].question;
+    choice1.textContent = testQuestions[questionIndexNum].choices.a;
+    choice2.textContent = testQuestions[questionIndexNum].choices.b;
+    choice3.textContent = testQuestions[questionIndexNum].choices.c;
+    choice4.textContent = testQuestions[questionIndexNum].choices.d;
+    questDisplay.textContent = "Question: " + questionNumDis; 
 
     console.log('Answer: ' + answer)
     console.log('Choice 1: ' + choice1.textContent)
     console.log('Choice 2: ' + choice2.textContent)
     console.log('Choice 3: ' + choice3.textContent)
     console.log('Choice 4: ' + choice4.textContent)
-    console.log('Question Num: ' + questionNum)
+    console.log('Question Num: ' + questionIndexNum)
     console.log('Correct Answers: ' + correctAnswers)
 }
 
@@ -175,7 +176,8 @@ choice1.addEventListener('click', function () {
         secondsLeft -= 5;
 
     }
-    questionNum++;
+    questionIndexNum++;
+    questionNumDis++;
     displayQuestion();
     return;
 });
@@ -188,7 +190,8 @@ choice2.addEventListener('click', function () {
         displayWrong();
         secondsLeft -= 5;
     }
-    questionNum++;
+    questionIndexNum++;
+    questionNumDis++;
     displayQuestion();
     return;
 });
@@ -201,7 +204,8 @@ choice3.addEventListener('click', function () {
         displayWrong();
         secondsLeft -= 5;
     }
-    questionNum++;
+    questionIndexNum++;
+    questionNumDis++;
     displayQuestion();
     return;
 
@@ -215,8 +219,9 @@ choice4.addEventListener('click', function () {
         displayWrong();
         secondsLeft -= 5;
     }
-    questionNum++;
+    questionIndexNum++;
     displayQuestion();
+    questionNumDis++;
     return;
 });
 startbtn.addEventListener('click', function(){

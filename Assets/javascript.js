@@ -156,11 +156,8 @@ function clock() {
         timer.textContent = secondsLeft + " seconds remaining.";
 
         if (secondsLeft === 0) {
-            clearInterval(timerInterval);
-            
-        }
-        else if(secondsLeft < 1){
             showScoreboard();
+            clearInterval(timerInterval);
         }
 
     }, 1000);
@@ -189,28 +186,54 @@ function displayQuestion() {
         console.log(average);
     }
     else if (questionIndexNum === 10)
-    showScoreboard();
+        showScoreboard();
     return;
 }
 
+let scores = [
+    {
+        "Name": "Jamie Hill",
+        "average": 50
+    },
+    {
+        "Name": "Michael Jordan",
+       "average": 70
+    },
+    {
+        "Name": "Joe Biden",
+        "average": 40,
+    }
+]
+
+let orderUserScores = (scores) => {
+    return scores.sort((a, b) => {
+        return b.average - a.average;
+
+    })
+}
+// fuction ordering names on the list by their scores.
+
 // name input for scoreboard. 
-function inputname (average) {
-   average =  (correctAnswers / 10) * 100;
-   var userName = window.prompt("Please enter your name or initials.")
-   var li = document.createElement('li');
-   var node = document.createTextNode(userName + ':'+ ' '  + average +'%');
-   li.appendChild(node);
-   document.getElementById('scoreList').appendChild(li);
-   
+function inputname(average) {
+    average = (correctAnswers / 10) * 100;
+    var userInputName = window.prompt("Please enter your name or initials.")
+    var userNameInputA = { userName: userInputName, average: average }
+    scores.push(userNameInputA)
+    orderUserScores();
+    console.log(scores)
+    //    var li = document.createElement('li');
+    //    var node = document.createTextNode(userName + ':'+ ' '  + average +'%');
+    //    li.appendChild(node);
+    //    document.getElementById('scoreList').appendChild(li);
 }
 // shows scoreboard when all questions are answred, or clock hits 0. remanings invisible until the function is called.
 function showScoreboard() {
-   scoreboard.setAttribute(
-    'style',
-    'visibility: visible'
-   )
-   
-   inputname();
+    scoreboard.setAttribute(
+        'style',
+        'visibility: visible'
+    )
+
+    inputname();
 
 }
 // follwing buttons are the choices, its choice has a function of checking the answer and displaying the proper message based on the answer.

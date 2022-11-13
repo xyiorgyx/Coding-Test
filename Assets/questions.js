@@ -2,94 +2,102 @@ var testQuestions = [
     {
         question: "What is the primary use for CSS code?",
         choices: {
-            a: 'Styling',
-            b: 'Structuring',
-            c: 'Bug fixing',
-            d: 'Debugging'
+            a: 'A: Styling',
+            b: 'B: Structuring',
+            c: 'C: Bug fixing',
+            d: 'D: Debugging'
         },
-        answer: 'a'
-    }, 
-    {
-        question: 'In CSS, "justify content" minipulates the spacing of content on what axis?',
-        choices: {
-            a: 'Cross Axis',
-            b: 'Main Axis',
-            c: 'All Axis'
-
-        },
-        answer: 'b'
+        answer: 'A: Styling'
     },
     {
-        question: 'What HTML attribute allows a programmer to input data using a URL?',
+        question: 'In CSS, "justify content" minipulates the spacing of content on what axis of flex?',
         choices: {
-            a: 'src = ""',
-            b: '<a>',
-            c: 'href = ""'
+            a: 'A: Cross Axis',
+            b: 'B: Main Axis',
+            c: 'C: All Axis',
+            d: 'D: None of the above'
+
         },
-        answer: 'c'
+        answer: 'B: Main Axis'
+    },
+    {
+        question: 'What HTML attribute allows a programmer to input something using a URL?',
+        choices: {
+            a: 'A: src = ""',
+            b: 'B: <a>',
+            c: 'C: href = ""',
+            d: 'D: link=""'
+        },
+        answer: 'C: href = ""'
     },
     {
         question: 'Which one of these choices is a self closing tag?',
         choices: {
-            a: '<Button>',
-            b: '<a>',
-            c: '<hr>'
+            a: 'A: <Button>',
+            b: 'B: <a>',
+            c: 'C: <hr>',
+            d: 'D: <span>'
         },
-        answer: 'c'
+        answer: 'C: <hr>'
     },
     {
         question: 'What is the main purpose of Meta Tags?',
         choices: {
-            a: 'Used in conjunction with Zuckerburg\'s Metaverse?',
-            b: 'Stores information specifically about the webpage',
-            c: 'There is no such thing as a meta tage'
+            a: 'A: It is used in conjunction with Zuckerburg\'s Metaverse?',
+            b: 'B: Defines data specifically about the webpage',
+            c: 'C: There is no such thing as META tags',
+            d: 'D: META is strictally for testing purposes'
         },
-        answer: 'b'
+        answer: 'B: Defines data specifically about the webpage'
     },
     {
         question: 'Which of the following choices is the proper structure for an if statement',
         choices: {
-            a: 'if ("Conditional statment") {"Expected excecution of code"};',
-            b: 'if ("Executed code") {"Conditional statement"};',
-            c: 'If {"Conditional statment"} ("executed code");'
+            a: 'A: if ("Conditional statment") {"Expected excecution of code"};',
+            b: 'B: if ("Executed code") {"Conditional statement"};',
+            c: 'C: If {"Conditional statment"} ("executed code")',
+            d: 'D: if {"Executed code"} (Conditional Statement)'
         },
-        answer: 'a'
+        answer: 'A: if ("Conditional statment") {"Expected excecution of code"};'
     },
     {
         question: "Using Javascript how can we create a functioning button?",
         choices: {
-            a: 'Addbuttonlistener("click", function)',
-            b: 'Addclicklistener("click", function)',
-            c: 'Addeventlistener("click", function)',
-            d: 'Addpushlistener("click",function)',
+            a: 'A: Addbuttonlistener("click", function)',
+            b: 'B: Addclicklistener("click", function)',
+            c: 'C: Addeventlistener("click", function)',
+            d: 'D: Addpushlistener("click", function)',
         },
-        answer: 'a'
+        answer: 'C: Addeventlistener("click", function)'
     },
     {
-        question: "What is the primary use for CSS code?",
+        question: "Which of these is the necessary decleration of an HTML file?",
         choices: {
-            a: 'Styling',
-            b: 'Structuring',
-            c: 'Bug fixing'
+            a: 'A: Doctype HTML',
+            b: 'B: <Doctype web>',
+            c: 'C: <html>',
+            d: 'D: <!DOCTYPE html>'
         },
-        answer: 'a'
+        answer: 'D: <!DOCTYPE html>'
     },
     {
-        question: "What is the primary use for CSS code?",
+        question: 'What is the main purpose of CSS\' "Flex Box"?',
         choices: {
-            a: 'Styling',
-            b: 'Structuring',
-            c: 'Bug fixing'
+            a: 'A: Interactions with Buttons',
+            b: 'B: Creative design',
+            c: 'C: Responsivness',
+            d: 'D: Creating elements'
         },
-        answer: 'a'
+        answer: 'C: Responsivness'
     },
     {
-        question: "What is the primary use for CSS code?",
+        question: "Which of the folloing tags is used to externally connect a CSS to an HTML file?",
         choices: {
-            a: 'Styling',
-            b: 'Structuring',
-            c: 'Bug fixing'
+            a: 'A: <Connect = " ">',
+            b: 'B: Import= " "',
+            c: 'C: CSS=" "',
+            d: 'D: <link>'
         },
-        answer: 'a'
-    },    
+        answer: 'D: <link>'
+    },
 ];

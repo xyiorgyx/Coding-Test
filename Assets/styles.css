@@ -78,8 +78,26 @@ button:hover {
     width: 8%;
     height: 3%;
     right: 46%;
-    top: 18%;
+    top: 23%;
     font-size: 30px;
     font-weight: bolder;
     visibility: hidden;
+}
+
+#score {
+    position: absolute;
+    background-color: lightgrey;
+    top:0%;
+    height:100%;
+    width: 100%;
+    visibility: hidden;
+}
+
+#score ol li{
+    font-size: larger;
+    font-weight: bold;
+}
+
+#test {
+    visibility: visible;
 }

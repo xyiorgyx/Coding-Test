@@ -1,4 +1,4 @@
-
+// The following variable is an object, containing all questions, answers, and choices.
 var testQuestions = [
     {
         question: "What is the primary use for CSS code?",
@@ -101,7 +101,19 @@ var testQuestions = [
         },
         answer: 'D: <link>'
     },
+    {
+        question: "Which of the folloing tags is used to externally connect a CSS to an HTML file?",
+        choices: {
+            a: 'A: <Connect = " ">',
+            b: 'B: Import= " "',
+            c: 'C: CSS=" "',
+            d: 'D: <link>'
+        },
+        answer: 'D: <link>'
+    },
 ];
+
+// variables for the functioning of the test. including averages and documents by element. 
 var questionNumDis = 1
 var correctAnswers = 0;
 var secondsLeft = 100;
@@ -117,24 +129,27 @@ var startbtn = document.querySelector('#start');
 var messageBox = document.getElementById('messagebox');
 var choices = document.getElementById('choices');
 var questDisplay = document.getElementById('questNumDis');
+var scoreboard = document.getElementById('score');
+var test = document.getElementById('test');
+var average = (correctAnswers / 10) * 100;
 
-
+// displayed when answer is correct.
 function displayCorrect() {
-    messageBox.textContent = "Thats correct!"
+    messageBox.textContent = answer + " is correct! Great job! keep it up!"
     messageBox.setAttribute(
         "style",
         "color: green"
     )
 }
-
+// displayed when answer is wrong. 
 function displayWrong() {
-    messageBox.textContent = "Im sorry, thats incorrect. 5 seconds has been deducted from the time"
+    messageBox.textContent = 'Im sorry, thats incorrect. the answer was: "' + answer + '"'
     messageBox.setAttribute(
         "style",
         "color: red"
     )
 }
-
+// clock counts down to 0, in which the test ends. 
 function clock() {
     var timerInterval = setInterval(function () {
         secondsLeft--;
@@ -142,30 +157,63 @@ function clock() {
 
         if (secondsLeft === 0) {
             clearInterval(timerInterval);
-            displaymessage();
+            
+        }
+        else if(secondsLeft < 1){
+            showScoreboard();
         }
 
     }, 1000);
 }
-
+// displays questions as long as the clock is great than 0, 
 function displayQuestion() {
-    answer = testQuestions[questionIndexNum].answer;
-    currentQuestion.textContent = testQuestions[questionIndexNum].question;
-    choice1.textContent = testQuestions[questionIndexNum].choices.a;
-    choice2.textContent = testQuestions[questionIndexNum].choices.b;
-    choice3.textContent = testQuestions[questionIndexNum].choices.c;
-    choice4.textContent = testQuestions[questionIndexNum].choices.d;
-    questDisplay.textContent = "Question: " + questionNumDis; 
 
-    console.log('Answer: ' + answer)
-    console.log('Choice 1: ' + choice1.textContent)
-    console.log('Choice 2: ' + choice2.textContent)
-    console.log('Choice 3: ' + choice3.textContent)
-    console.log('Choice 4: ' + choice4.textContent)
-    console.log('Question Num: ' + questionIndexNum)
-    console.log('Correct Answers: ' + correctAnswers)
+    if (secondsLeft > 0 && questionIndexNum != 10) {
+        let average = (correctAnswers / 10) * 100;
+        answer = testQuestions[questionIndexNum].answer;
+        currentQuestion.textContent = testQuestions[questionIndexNum].question;
+        choice1.textContent = testQuestions[questionIndexNum].choices.a;
+        choice2.textContent = testQuestions[questionIndexNum].choices.b;
+        choice3.textContent = testQuestions[questionIndexNum].choices.c;
+        choice4.textContent = testQuestions[questionIndexNum].choices.d;
+        questDisplay.textContent = "Question: " + questionNumDis;
+
+
+        console.log('Answer: ' + answer)
+        console.log('Choice 1: ' + choice1.textContent)
+        console.log('Choice 2: ' + choice2.textContent)
+        console.log('Choice 3: ' + choice3.textContent)
+        console.log('Choice 4: ' + choice4.textContent)
+        console.log('Question Num: ' + questionIndexNum)
+        console.log('Correct Answers: ' + correctAnswers)
+        console.log(average);
+    }
+    else if (questionIndexNum === 10)
+    showScoreboard();
+    return;
 }
 
+// name input for scoreboard. 
+function inputname (average) {
+   average =  (correctAnswers / 10) * 100;
+   var userName = window.prompt("Please enter your name or initials.")
+   var li = document.createElement('li');
+   var node = document.createTextNode(userName + ':'+ ' '  + average +'%');
+   li.appendChild(node);
+   document.getElementById('scoreList').appendChild(li);
+   
+}
+// shows scoreboard when all questions are answred, or clock hits 0. remanings invisible until the function is called.
+function showScoreboard() {
+   scoreboard.setAttribute(
+    'style',
+    'visibility: visible'
+   )
+   
+   inputname();
+
+}
+// follwing buttons are the choices, its choice has a function of checking the answer and displaying the proper message based on the answer.
 choice1.addEventListener('click', function () {
     if (choice1.textContent === answer) {
         displayCorrect();
@@ -224,7 +272,8 @@ choice4.addEventListener('click', function () {
     questionNumDis++;
     return;
 });
-startbtn.addEventListener('click', function(){
+// start button activates the test and timer. It displays all questions as well as choices.
+startbtn.addEventListener('click', function () {
     displayQuestion();
     clock();
     choices.setAttribute(
@@ -241,5 +290,3 @@ startbtn.addEventListener('click', function(){
 })
 
 
-var correctMess = 'Thats correct';
-var incorrectMess = 'sorry, thats not correct, the answer is: '

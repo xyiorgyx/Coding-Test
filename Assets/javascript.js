@@ -188,7 +188,7 @@ function displayQuestion() {
     }
     else if (questionIndexNum === 10)
         showScoreboard();
-        clearInterval();
+        
     return;
 }
 //list of people and their scores
@@ -204,6 +204,10 @@ var scores = [
     {
         "Name": "Joe Biden",
         "average": 40,
+    },
+    {
+        "Name": "Mia Khalifa",
+        "average": 10,
     }
 ]
 // orders the list of the "Scores" array
@@ -237,7 +241,7 @@ function inputname(average) {
 }
 // shows scoreboard when all questions are answred, or clock hits 0. remanings invisible until the function is called.
 function showScoreboard() {
-    
+
     scoreboard.setAttribute(
         'style',
         'visibility: visible'
@@ -336,6 +340,11 @@ tryagain.addEventListener('click',function(){
         'style',
         'visibility: hidden'
     )
+    tryagain.setAttribute(
+        'style',
+        'visibility: hidden'
+    )
+    messageBox.textContent = ""
     document.getElementById('scoreList').innerHTML = "";
 })
 

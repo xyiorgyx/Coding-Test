@@ -188,6 +188,7 @@ function displayQuestion() {
     }
     else if (questionIndexNum === 10)
         showScoreboard();
+        clearInterval();
     return;
 }
 //list of people and their scores
@@ -236,6 +237,7 @@ function inputname(average) {
 }
 // shows scoreboard when all questions are answred, or clock hits 0. remanings invisible until the function is called.
 function showScoreboard() {
+    
     scoreboard.setAttribute(
         'style',
         'visibility: visible'

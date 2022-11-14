@@ -116,7 +116,7 @@ var testQuestions = [
 // variables for the functioning of the test. including averages and documents by element. 
 var questionNumDis = 1
 var correctAnswers = 0;
-var secondsLeft = 100;
+var secondsLeft = 120;
 var questionIndexNum = 0;
 var currentQuestion = document.getElementById("question");
 var answer = testQuestions[questionIndexNum].answer;
@@ -131,6 +131,7 @@ var choices = document.getElementById('choices');
 var questDisplay = document.getElementById('questNumDis');
 var scoreboard = document.getElementById('score');
 var test = document.getElementById('test');
+var tryagain = document.getElementById('tryagain');
 var average = (correctAnswers / 10) * 100;
 
 // displayed when answer is correct.
@@ -189,8 +190,8 @@ function displayQuestion() {
         showScoreboard();
     return;
 }
-
-let scores = [
+//list of people and their scores
+var scores = [
     {
         "Name": "Jamie Hill",
         "average": 50
@@ -204,27 +205,34 @@ let scores = [
         "average": 40,
     }
 ]
-
+// orders the list of the "Scores" array
 let orderUserScores = (scores) => {
     return scores.sort((a, b) => {
         return b.average - a.average;
 
-    })
+    });
 }
-// fuction ordering names on the list by their scores.
 
-// name input for scoreboard. 
+// name input for scoreboard. saves to local sotrage and presents it to the user.
 function inputname(average) {
+
     average = (correctAnswers / 10) * 100;
     var userInputName = window.prompt("Please enter your name or initials.")
-    var userNameInputA = { userName: userInputName, average: average }
+    var userNameInputA = {"Name": userInputName, "average": average }
+    JSON.parse(localStorage.getItem("scores", (scores)));
     scores.push(userNameInputA)
-    orderUserScores();
-    console.log(scores)
-    //    var li = document.createElement('li');
-    //    var node = document.createTextNode(userName + ':'+ ' '  + average +'%');
-    //    li.appendChild(node);
-    //    document.getElementById('scoreList').appendChild(li);
+    localStorage.setItem("scores", JSON.stringify(scores) );
+    console.log(orderUserScores(scores))
+
+    //list out users and scores.
+    for (i=0;  i < scores.length; i++){
+    let average=  scores[i].average;
+    let Name = scores[i].Name;
+    var li = document.createElement('li');
+    var node = document.createTextNode(Name + ':'+ ' '  + average +'%');
+    li.appendChild(node);
+    document.getElementById('scoreList').appendChild(li);}
+   
 }
 // shows scoreboard when all questions are answred, or clock hits 0. remanings invisible until the function is called.
 function showScoreboard() {
@@ -232,7 +240,10 @@ function showScoreboard() {
         'style',
         'visibility: visible'
     )
-
+    tryagain.setAttribute(
+        'style',
+        'visibility: visible'
+    )
     inputname();
 
 }
@@ -310,6 +321,20 @@ startbtn.addEventListener('click', function () {
         'style',
         'visibility: visible',
     )
+})
+// resets test
+tryagain.addEventListener('click',function(){
+    questionNumDis = 1;
+    correctAnswers = 0;
+    secondsLeft = 120;
+    questionIndexNum = 0;
+    displayQuestion();
+
+    scoreboard.setAttribute(
+        'style',
+        'visibility: hidden'
+    )
+    document.getElementById('scoreList').innerHTML = "";
 })
 
 

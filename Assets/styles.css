@@ -75,7 +75,7 @@ button:hover {
 
 #questNumDis {
     position: absolute;
-    width: 8%;
+    width: 10%;
     height: 3%;
     right: 46%;
     top: 23%;
@@ -100,4 +100,17 @@ button:hover {
 
 #test {
     visibility: visible;
+}
+
+#tryagain {
+    visibility: hidden;
+    position: absolute;
+    left: 40%;
+    top:5%;
+    font-size: larger;
+    font-weight: bold;
+    margin: 2% 40% 2% 40%;
+    width: 10%;
+    height: 6%;
+    background-color: darkgray;
 }

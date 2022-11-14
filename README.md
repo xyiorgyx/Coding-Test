@@ -14,9 +14,9 @@ https://github.com/xyiorgyx/HTML-CSS-and-Javascript-Test
 https://xyiorgyx.github.io/HTML-CSS-and-Javascript-Test/
 
 ## Images
-![Alt text](https://file%2B.vscode-resource.vscode-cdn.net/c%3A/Users/bosna/OneDrive/Desktop/Coding-Test/Assets/images/Starting%20Page.png?version%3D1668460802768)
+![Picture of the beginning of the test and the start button](./Assets/images/Starting%20Page.png)
 
-![Alt text](https://file%2B.vscode-resource.vscode-cdn.net/c%3A/Users/bosna/OneDrive/Desktop/Coding-Test/Assets/images/Question%20.png?version%3D1668460758329)
+![Picture of a single question with its choices](./Assets/images/Question%20.png)
 
-![Alt text](https://file%2B.vscode-resource.vscode-cdn.net/c%3A/Users/bosna/OneDrive/Desktop/Coding-Test/Assets/images/ScoreBoard.png?version%3D1668460781114)
+![Picture of the final scoreboard with names and scores on them](./Assets/images/ScoreBoard.png)
 
